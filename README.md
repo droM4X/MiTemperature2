@@ -10,7 +10,7 @@ ATC MiThermometer: https://github.com/atc1441/ATC_MiThermometer
 
 1. Image building: `sudo docker build -t mitempatc https://github.com/droM4X/MiTemperature2.git`
 
-2. Edit mi-sensors.ini file, set your devices MAC address/names
+2. Edit sensors.ini file, set your devices MAC address/names
 
 3. Container start: `sudo docker run --net=host --privileged --restart unless-stopped -d -i -t -v [PATH-TO-DIRECTORY]:/usr/src/app --name MiTempATC mitempatc`
 
