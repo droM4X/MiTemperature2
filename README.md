@@ -14,7 +14,7 @@ ATC MiThermometer: https://github.com/atc1441/ATC_MiThermometer
 
 3. Image building: `sudo docker build -t mitempatc -f ./Dockerfile .`
 
-4. Container start: `sudo docker run --net=host --privileged --restart unless-stopped -d -i -t -v [PATH-TO-DIRECTORY]:/usr/src/app --name MiTempATC mitempatc`
+4. Container start: `sudo docker run --net=host --privileged --restart unless-stopped -d -i -t -v [PATH]/sensordata:/usr/src/app/sensordata --mount type=bind,source=[PATH]/sensors.ini,target=/usr/src/app/sensors.ini --name MiTempATC mitempatc`
 
 Option --privileged required to access docker host bluetooth manager
 
