@@ -1,4 +1,4 @@
-FROM python:3-buster 
+FROM python:3-slim
 
 WORKDIR /usr/src/app
 
@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 ENV LANG C.UTF-8
 
 RUN apt update
-RUN apt-get -y --no-install-recommends install python3-dev python3-pip libglib2.0-dev bluetooth libbluetooth-dev python3-setuptools
+RUN apt -y --no-install-recommends install build-essential python3-dev python3-pip libglib2.0-dev bluetooth libbluetooth-dev python3-setuptools
 
 RUN /usr/bin/pip3 install requests
 RUN /usr/bin/pip3 install wheel
