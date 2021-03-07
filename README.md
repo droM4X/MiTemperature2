@@ -8,11 +8,13 @@ ATC MiThermometer: https://github.com/atc1441/ATC_MiThermometer
 
 ## Usage
 
-1. Image building: `sudo docker build -t mitempatc https://github.com/droM4X/MiTemperature2.git`
+1. `git clone https://github.com/droM4X/MiTemperature2.git`
 
-2. Edit sensors.ini file, set your devices MAC address/names
+2. Edit sensors.ini file in MiTemperature directory, set your devices MAC address/names
 
-3. Container start: `sudo docker run --net=host --privileged --restart unless-stopped -d -i -t -v [PATH-TO-DIRECTORY]:/usr/src/app --name MiTempATC mitempatc`
+3. Image building: `sudo docker build -t mitempatc -f ./Dockerfile .`
+
+4. Container start: `sudo docker run --net=host --privileged --restart unless-stopped -d -i -t -v [PATH-TO-DIRECTORY]:/usr/src/app --name MiTempATC mitempatc`
 
 Option --privileged required to access docker host bluetooth manager
 
